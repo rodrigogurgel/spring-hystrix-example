@@ -1,0 +1,22 @@
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        #sleepWindowInMilliseconds: 10000
+        #requestVolumeThreshold: 6
+        enabled: false
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 3000
+
+  threadpool:
+    default:
+      coreSize: 2
+      #keepAliveTimeMinutes:1
+      maximumSize: 5
+      allowMaximumSizeToDivergeFromCoreSize: true
+
+      maxQueueSize: 3
+      queueSizeRejectionThreshold: 3
